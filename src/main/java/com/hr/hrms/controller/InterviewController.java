@@ -34,7 +34,7 @@ public class InterviewController {
     }
 
     @PostMapping("/save")
-    public String saveInterview(@ModelAttribute Interview interview){
+    public String saveInterview(@ModelAttribute Interview interview) {
 
         interviewService.saveInterview(interview);
 
@@ -50,10 +50,14 @@ public class InterviewController {
                 "\nMeeting Link / Location : " + interview.getInterviewLocation() +
                 "\n\nRegards,\nHR Team";
 
-        emailService.sendEmail(
-                interview.getCandidateEmail(),
-                subject,
-                body);
+        try {
+            emailService.sendEmail(
+                    interview.getCandidateEmail(),
+                    subject,
+                    body);
+        } catch (Exception e) {
+            System.out.println("Email sending failed: " + e.getMessage());
+        }
 
         return "redirect:/interviews";
     }
