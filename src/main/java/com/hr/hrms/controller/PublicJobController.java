@@ -22,7 +22,7 @@ public class PublicJobController {
     @Autowired
     private CandidateService candidateService;
 
-    @GetMapping("/jobs/view")
+    @GetMapping("/public/jobs")
     public String viewJobs(Model model){
 
         model.addAttribute("jobs",
