@@ -123,10 +123,8 @@
 
 </div>
 
-<button class="btn btn-success">
-
-Save Job
-
+<button type="submit" class="btn btn-success"
+        th:text="${job.id == null} ? 'Save Job' : 'Update Job'">
 </button>
 
 <a href="/jobs" class="btn btn-secondary">
