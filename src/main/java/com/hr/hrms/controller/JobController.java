@@ -35,7 +35,7 @@ public class JobController {
     }
 
     // View Jobs
-    @GetMapping
+    @GetMapping({ "", "/view" })
     public String viewJobs(Model model) {
 
         model.addAttribute("jobs", service.getAllJobs());
