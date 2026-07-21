@@ -81,7 +81,7 @@ Add Job
 
 <tbody>
 
-<tr th:each="job : ${jobs}">
+<tr th:each="job, stat : ${jobs}">
 
 <td th:text="${stat.count}"></td>
 
