@@ -102,6 +102,10 @@ public class CandidateController {
         model.addAttribute("candidates",
                 candidateService.searchCandidate(keyword));
 
+        // Required for candidate-list.html
+        model.addAttribute("currentPage", 0);
+        model.addAttribute("totalPages", 1);
+
         return "candidate-list";
     }
     
